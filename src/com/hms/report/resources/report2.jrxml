@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="56a95a5b-d98c-4150-a048-e925167be6b0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     blood.`id` AS blood_id,
+     blood.`basophils` AS blood_basophils,
+     blood.`eosinophil` AS blood_eosinophil,
+     blood.`himoglobine` AS blood_himoglobine,
+     blood.`lymphocytes` AS blood_lymphocytes,
+     blood.`monocytes` AS blood_monocytes,
+     blood.`neutrophils` AS blood_neutrophils,
+     blood.`others` AS blood_others,
+     blood.`platelets` AS blood_platelets,
+     blood.`testDate` AS blood_testDate,
+     blood.`patient_id` AS blood_patient_id,
+     blood.`patientName` AS blood_patientName
+FROM
+     `blood` blood]]>
+	</queryString>
+	<field name="blood_id" class="java.lang.Long"/>
+	<field name="blood_basophils" class="java.lang.Double"/>
+	<field name="blood_eosinophil" class="java.lang.Double"/>
+	<field name="blood_himoglobine" class="java.lang.Double"/>
+	<field name="blood_lymphocytes" class="java.lang.Double"/>
+	<field name="blood_monocytes" class="java.lang.Double"/>
+	<field name="blood_neutrophils" class="java.lang.Double"/>
+	<field name="blood_others" class="java.lang.Double"/>
+	<field name="blood_platelets" class="java.lang.Double"/>
+	<field name="blood_testDate" class="java.sql.Date"/>
+	<field name="blood_patient_id" class="java.lang.Long"/>
+	<field name="blood_patientName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="2" width="100" height="20" uuid="f990ecc1-7289-4c3e-bcba-0c0c68a13fce"/>
+				<text><![CDATA[blood_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="2" width="100" height="20" uuid="589793d5-b667-49e5-bb67-49579346ff39"/>
+				<text><![CDATA[blood_basophils]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="2" width="100" height="20" uuid="1c385e28-fb35-4ff5-8b3f-692d680cc840"/>
+				<text><![CDATA[blood_himoglobine]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="17" y="8" width="100" height="20" uuid="e3fc0fc0-121c-43e7-9ae7-c61927f39105"/>
+				<textFieldExpression><![CDATA[$F{blood_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="7" width="100" height="20" uuid="550c1465-4a95-4079-ad6b-9509c6bb8cb1"/>
+				<textFieldExpression><![CDATA[$F{blood_basophils}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="8" width="100" height="20" uuid="df2d34be-1011-490b-b5ed-f573b57d58c8"/>
+				<textFieldExpression><![CDATA[$F{blood_himoglobine}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

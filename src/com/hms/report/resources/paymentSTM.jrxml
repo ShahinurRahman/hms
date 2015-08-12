@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="paymentSTM" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f610db8e-3927-49f9-9bfc-e3a84347081b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="start" class="java.lang.String"/>
+	<parameter name="end" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     ledger_ac.`id` AS ledger_ac_id,
+     ledger_ac.`receipt` AS ledger_ac_receipt,
+     ledger_ac.`date` AS ledger_ac_date,
+     ledger_ac.`amount` AS ledger_ac_amount,
+     ledger_ac.`patient_id` AS ledger_ac_patient_id
+FROM
+     `ledger_ac` ledger_ac]]>
+	</queryString>
+	<field name="ledger_ac_id" class="java.lang.Long"/>
+	<field name="ledger_ac_receipt" class="java.lang.String"/>
+	<field name="ledger_ac_date" class="java.sql.Date"/>
+	<field name="ledger_ac_amount" class="java.lang.Double"/>
+	<field name="ledger_ac_patient_id" class="java.lang.Long"/>
+	<field name="receipt" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<group name="ledger_ac_receipt">
+		<groupExpression><![CDATA[$F{ledger_ac_receipt}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="297" y="34" width="100" height="20" uuid="477fed87-c174-42cc-89da-217d0a4b31d7"/>
+				<textFieldExpression><![CDATA[$P{start}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="34" width="100" height="20" uuid="658f77ce-f358-4f71-9379-1bd7d6b1517b"/>
+				<textFieldExpression><![CDATA[$P{end}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="418" y="34" width="28" height="20" uuid="74c3d275-1f3b-45e7-aa1e-36733abc30e9"/>
+				<text><![CDATA[to]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="261" y="2" width="100" height="20" uuid="16cca27d-8159-4c64-83dc-a6bb9a9797db"/>
+				<text><![CDATA[Patient ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="2" width="100" height="20" uuid="831c5864-821a-42c7-aa3b-7a922c1b5632"/>
+				<text><![CDATA[receipt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="0" width="100" height="20" uuid="e9680618-d4a0-4201-a518-2b4d355e8af0"/>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="2" width="100" height="20" uuid="0ac553ee-ed9d-4c5e-bdd2-6f2b3bce8733"/>
+				<text><![CDATA[amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="161" y="1" width="100" height="20" uuid="5febd286-c0c4-4c64-8f4e-4901b28c866b"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="22" y="0" width="100" height="20" uuid="343c9b41-0970-4288-bed2-fd824d0a4126"/>
+				<textFieldExpression><![CDATA[$F{receipt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="1" width="100" height="20" uuid="42ba0c2c-41d7-4e2a-9953-2064a8c3d111"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

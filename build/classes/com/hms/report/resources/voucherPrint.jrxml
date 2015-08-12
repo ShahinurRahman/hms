@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="voucherPrint" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="646a9481-416c-4253-b001-ea0714668648">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="testName" class="java.lang.String"/>
+	<parameter name="rate" class="java.lang.String"/>
+	<parameter name="deleveryDate" class="java.lang.String"/>
+	<parameter name="parameter5" class="java.lang.String"/>
+	<parameter name="parameter6" class="java.lang.String"/>
+	<parameter name="parameter7" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     test.`id` AS test_id,
+     test.`deliveryDays` AS test_deliveryDays,
+     test.`rate` AS test_rate,
+     test.`testId` AS test_testId,
+     test.`testName` AS test_testName,
+     test.`department_id` AS test_department_id,
+     test.`biochemistry_id` AS test_biochemistry_id,
+     test.`patient_id` AS test_patient_id
+FROM
+     `test` test]]>
+	</queryString>
+	<field name="test_id" class="java.lang.Long"/>
+	<field name="test_deliveryDays" class="java.lang.Integer"/>
+	<field name="test_rate" class="java.lang.Double"/>
+	<field name="test_testId" class="java.lang.String"/>
+	<field name="test_testName" class="java.lang.String"/>
+	<field name="test_department_id" class="java.lang.Long"/>
+	<field name="test_biochemistry_id" class="java.lang.Long"/>
+	<field name="test_patient_id" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="102" y="2" width="382" height="43" forecolor="#006699" uuid="9bcb4966-343f-493a-8196-8554f48e49a7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Friend's Diagnostic Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="37" width="495" height="37" forecolor="#0000FF" uuid="6ea5914b-4fa5-4dd4-bcc7-e78b8dbd9949"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Address: 2/Ka, Nawab Habibullah Road, Uttara, Dhaka-1205, Phone: 023434567,
+Contact: +88 01944 00 5445, E-mail: shahin.java24@gmail.com, web: www.fdc.gov.com]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="75" width="555" height="1" forecolor="#3300CC" uuid="24479fe6-7ff5-47bf-84b7-49e1e199ac00"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="12" y="2" width="53" height="35" forecolor="#9999FF" uuid="630dfb4c-baff-4fa7-b0d6-17010c65a631"/>
+				<textElement>
+					<font fontName="Segoe UI" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FDC]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="2" width="100" height="20" uuid="1ae4b6ed-c4d2-43ce-9afe-e9b2a7702047"/>
+				<text><![CDATA[test_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="2" width="100" height="20" uuid="363cfe52-acd0-439d-babe-72a40197ef1a"/>
+				<text><![CDATA[test_testName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="2" width="100" height="20" uuid="ce2d8aae-c31d-4314-9bca-df9f6ce41808"/>
+				<text><![CDATA[test_rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="2" width="100" height="20" uuid="08462eac-68e2-4b2f-bb07-285de0dcded4"/>
+				<text><![CDATA[test_deliveryDays]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="17" y="8" width="100" height="20" uuid="1c08c300-0c55-4678-b5c9-a170e99a0021"/>
+				<textFieldExpression><![CDATA[$F{test_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="8" width="100" height="20" uuid="caaf6ea4-5f1a-4087-9b8e-57c816eacff7"/>
+				<textFieldExpression><![CDATA[$F{test_testName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="10" width="100" height="20" uuid="728d29a7-b702-4cf9-b6ff-ed7be3bff89f"/>
+				<textFieldExpression><![CDATA[$F{test_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="10" width="100" height="20" uuid="5581d659-92af-4d0d-9156-4b8b4f4d7422"/>
+				<textFieldExpression><![CDATA[$F{test_deliveryDays}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stm" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="54e1ff5f-58df-41df-b961-13390b1bfc23">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="due" class="java.lang.String"/>
+	<parameter name="paid" class="java.lang.String"/>
+	<parameter name="discount" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     doctor.`id` AS doctor_id,
+     doctor.`name` AS doctor_name,
+     doctor.`contact` AS doctor_contact,
+     doctor.`designation` AS doctor_designation,
+     doctor.`address` AS doctor_address,
+     doctor.`doctorId` AS doctor_doctorId
+FROM
+     `doctor` doctor]]>
+	</queryString>
+	<field name="regNo" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="due" class="java.lang.String"/>
+	<field name="paid" class="java.lang.String"/>
+	<field name="discount" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="2" width="382" height="43" forecolor="#006699" uuid="17a3b50e-7e72-4abd-bd2b-1d248dbdfdd5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Friend's Diagnostic Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="2" width="53" height="35" forecolor="#9999FF" uuid="1d85da30-b1c4-4528-95dc-8d9097387d90"/>
+				<textElement>
+					<font fontName="Segoe UI" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FDC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="37" width="495" height="37" forecolor="#0000FF" uuid="75fbbc2c-e02d-4d27-a340-99a5509285ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Address: 2/Ka, Nawab Habibullah Road, Uttara, Dhaka-1205, Phone: 023434567,
+Contact: +88 01944 00 5445, E-mail: shahin.java24@gmail.com, web: www.fdc.gov.com]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="76" width="555" height="1" forecolor="#3300CC" uuid="4bf83e0d-12e4-4774-8878-797ebcfc93bb"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="448" y="0" width="100" height="20" uuid="357214c1-957d-41dc-bdb8-f7607a05546a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="20" width="554" height="1" forecolor="#000066" uuid="fad66659-ae87-4e38-8eea-4a30b1067f64"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="4" y="2" width="43" height="20" uuid="ec9f42cc-9229-439f-9930-8763e63ac1ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reg No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="2" width="39" height="20" uuid="97b7b9bd-2238-4339-af58-f15ddb040b18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="2" width="78" height="20" uuid="14556ffd-49c3-41ce-b9f6-96b484b695b3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="2" width="55" height="20" uuid="bfd7c603-5187-4127-9221-ce6e7d8b162e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Due Bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="2" width="48" height="20" uuid="1e4b127e-19d7-4e65-80bb-c29fa37896dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="2" width="54" height="20" uuid="ba5ccb42-3bcc-48d0-9c94-2a08237680a4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="2" width="57" height="20" uuid="aed95a40-1a79-48e4-905e-2e7ef1f0082c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="2" width="53" height="20" uuid="819d5f1f-f732-483a-9f02-c44a2b14b1cf"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{regNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="2" width="56" height="20" uuid="698132e3-ea09-4a83-986d-187b54d83267"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="2" width="112" height="20" uuid="f2daef6f-aebf-4f05-9d68-347239c4e4fa"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="2" width="55" height="20" uuid="7012c828-118a-4314-a5bd-f1dd76ef4904"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{due}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="2" width="48" height="20" uuid="1f97cdcf-8354-44de-b62a-3ed991d13d97"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="2" width="54" height="20" uuid="92261031-7b6a-4bb1-8d45-a223fb5a8780"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="2" width="47" height="20" uuid="67e7d510-bc18-43d6-86b0-526260b7b35b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{discount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="39" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="4" width="552" height="20" forecolor="#3333FF" uuid="012d5f50-2752-46a0-893a-d76f02412aba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Contact: +88 01944 00 5445, E-mail: shahin.java24@gmail.com, web: www.fdc.gov.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="4" width="554" height="1" forecolor="#000066" uuid="aba2badd-3d97-4f65-9306-cf8f774e8645"/>
+			</line>
+			<textField>
+				<reportElement x="257" y="6" width="54" height="20" uuid="bc7953d6-02b7-464a-bbf2-85e13027dd79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="6" width="47" height="20" uuid="799e586c-c1ff-42aa-98f6-1487603c66cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="6" width="48" height="20" uuid="2276469d-c0d3-4854-92b3-8c34b63439a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{paid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="5" width="50" height="20" uuid="958bfe0c-6cd0-4341-a95a-df09684cabfe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{due}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="311" y="6" width="8" height="20" uuid="722a48d6-dfeb-40d3-b4a3-f5e7b054e0c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="6" width="8" height="20" uuid="ab50cef5-4850-4193-a85a-2f12ae53ebac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="6" width="8" height="20" uuid="cffa6058-1328-4c50-bcad-0acce4e3ab85"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="6" width="8" height="20" uuid="3391f449-2227-4358-8b59-69a998b47c0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/-]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

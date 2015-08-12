@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="biochemistry" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11ea916b-d7c0-4f6b-b15d-6b31ecd531cc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="age" class="java.lang.String"/>
+	<parameter name="sex" class="java.lang.String"/>
+	<parameter name="doctor" class="java.lang.String"/>
+	<parameter name="dentalXray1" class="java.lang.String"/>
+	<parameter name="dentalXray2" class="java.lang.String"/>
+	<parameter name="dentalXray3" class="java.lang.String"/>
+	<parameter name="dentalXray4" class="java.lang.String"/>
+	<parameter name="dentalXray5" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     biochemistry.`id` AS biochemistry_id,
+     biochemistry.`bloodUr` AS biochemistry_bloodUr,
+     biochemistry.`bun` AS biochemistry_bun,
+     biochemistry.`creati` AS biochemistry_creati,
+     biochemistry.`gluco` AS biochemistry_gluco,
+     biochemistry.`glucoRPP` AS biochemistry_glucoRPP,
+     biochemistry.`hdCholes` AS biochemistry_hdCholes,
+     biochemistry.`ldlCholes` AS biochemistry_ldlCholes,
+     biochemistry.`sCholes` AS biochemistry_sCholes,
+     biochemistry.`sTotalLip` AS biochemistry_sTotalLip,
+     biochemistry.`testDate` AS biochemistry_testDate,
+     biochemistry.`triglyce` AS biochemistry_triglyce,
+     biochemistry.`vldlCholes` AS biochemistry_vldlCholes,
+     biochemistry.`patient_id` AS biochemistry_patient_id
+FROM
+     `biochemistry` biochemistry]]>
+	</queryString>
+	<field name="biochemistry_id" class="java.lang.Long"/>
+	<field name="biochemistry_bloodUr" class="java.lang.Double"/>
+	<field name="biochemistry_bun" class="java.lang.Double"/>
+	<field name="biochemistry_creati" class="java.lang.Double"/>
+	<field name="biochemistry_gluco" class="java.lang.Double"/>
+	<field name="biochemistry_glucoRPP" class="java.lang.Double"/>
+	<field name="biochemistry_hdCholes" class="java.lang.Double"/>
+	<field name="biochemistry_ldlCholes" class="java.lang.Double"/>
+	<field name="biochemistry_sCholes" class="java.lang.Double"/>
+	<field name="biochemistry_sTotalLip" class="java.lang.Double"/>
+	<field name="biochemistry_testDate" class="java.sql.Date"/>
+	<field name="biochemistry_triglyce" class="java.lang.Double"/>
+	<field name="biochemistry_vldlCholes" class="java.lang.Double"/>
+	<field name="biochemistry_patient_id" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="53" height="35" forecolor="#9999FF" uuid="1dc43bc9-fd92-4292-81a9-e7ad06c716cc"/>
+				<textElement>
+					<font fontName="Segoe UI" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FDC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="35" width="495" height="37" forecolor="#0000FF" uuid="18c543cd-b9a2-48e2-90ee-194c9acd4251"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Address: 2/Ka, Nawab Habibullah Road, Uttara, Dhaka-1205, Phone: 023434567,
+Contact: +88 01944 00 5445, E-mail: shahin.java24@gmail.com, web: www.fdc.gov.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="0" width="382" height="43" forecolor="#006699" uuid="185cbf4d-3547-4037-827c-d44c79967643"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Friend's Diognostic Center]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="73" width="555" height="1" forecolor="#3300CC" uuid="489d0899-0065-4096-a579-ad8b263c67c6"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="117" splitType="Stretch">
+			<textField>
+				<reportElement x="92" y="62" width="154" height="20" uuid="e454a67b-cba0-4a26-9f57-c81f4781ac05"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="62" width="46" height="20" uuid="0218fac5-fbd5-4b40-affa-0a4fe42efa03"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="62" width="64" height="20" uuid="6531c6de-f447-4419-9d37-2182c7b19e6b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{sex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="87" width="160" height="20" uuid="647549e6-6b2e-45ba-8d1d-cb8c5d5bf15f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{doctor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="62" width="74" height="20" uuid="179c1064-b665-4c65-9fbd-0033ae394198"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="87" width="95" height="20" uuid="803829af-fa38-4919-b3f8-368aeae65865"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reference Doctor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="62" width="30" height="20" uuid="56c1f610-07b2-4143-8902-da63e8fe5e0f"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Age:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="62" width="29" height="20" uuid="d8f3087c-599e-4055-bd1b-5f1527457ff1"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sex:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="87" width="100" height="20" uuid="e6e81ebc-0727-407e-b434-c5248abeac8d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="87" width="87" height="20" uuid="5535a415-aa79-4fb4-8875-e7fa79b67546"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Registration Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="13" width="238" height="35" uuid="6a8c1c87-2a17-465b-99ad-2eeac9d99384"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DentalXray Test Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="3" width="98" height="20" uuid="de60d3b6-a6dd-4b57-b783-e7187e1eddbe"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Test Info Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="3" width="98" height="20" uuid="faf27c1e-3cfe-442c-a084-d5396b1d2a4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Result]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="554" height="1" uuid="57ff8dad-e667-47fa-b8af-0ee60e9e8cd2"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="138" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="9" width="100" height="20" uuid="05008dd9-7fb6-4183-89d1-895c2e86aa55"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[dentalXray1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="79" width="100" height="20" uuid="370310ca-837a-4180-8fe1-82c7dd1f800d"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[dentalXray4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="102" width="100" height="20" uuid="1e0a6dae-e16e-48d3-922a-5ad8e00d2741"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[dentalXray5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="34" width="100" height="20" uuid="336bcdf6-3313-4ad0-8047-9dbc40601d02"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[dentalXray2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="56" width="100" height="20" uuid="e150d765-b03e-494e-a3df-41e2d4088221"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[dentalXray3]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="463" y="5" width="100" height="20" uuid="6f483e16-20cf-4d39-bebd-3cdf27fe344f"/>
+				<textFieldExpression><![CDATA[$P{dentalXray1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="29" width="100" height="20" uuid="61a6a695-61cf-4410-87aa-0e9214023f71"/>
+				<textFieldExpression><![CDATA[$P{dentalXray2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="55" width="100" height="20" uuid="20acc15f-a8c5-4b4a-9db4-6962e375a099"/>
+				<textFieldExpression><![CDATA[$P{dentalXray3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="83" width="100" height="20" uuid="612a0f91-bc2c-4977-89d1-9052d6b86fc2"/>
+				<textFieldExpression><![CDATA[$P{dentalXray4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="103" width="100" height="20" uuid="a973cd19-c21e-4907-9432-54849d1bc14b"/>
+				<textFieldExpression><![CDATA[$P{dentalXray5}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
